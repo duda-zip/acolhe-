@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Área do Funcionário</title>
+  <link rel="stylesheet" href="css/chat.css">
+</head>
+<body>
+  <h2>Mensagens Recebidas</h2>
+  <div class="chat-container">
+    <div class="chat-messages" id="chat-messages"></div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+
+    socket.on('mensagemRecebida', (msg) => {
+      const container = document.getElementById('chat-messages');
+      const el = document.createElement('div');
+      el.className = 'message user';
+      el.textContent = msg;
+      container.appendChild(el);
+      container.scrollTop = container.scrollHeight;
+    });
+  </script>
+</body>
+</html>

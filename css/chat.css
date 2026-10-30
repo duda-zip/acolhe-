@@ -1,0 +1,260 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+
+body {
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  background: transparent;
+}
+
+.logo img {
+  width: 8vh;
+  width: 8vh;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+}
+
+.hamburger {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 400px;
+  height: 100%;
+  background: #e0e0e0;
+  color: black;
+  padding: 30px;
+  transition: right 0.4s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.side-menu.active {
+  right: 0;
+}
+
+.side-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-btn {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.side-links {
+  list-style: none;
+  margin-top: 40px;
+  padding-left: 0;
+
+  & a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.side-links li {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+.sub-link {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.bottom-location {
+  border-top: 1px solid #93c3c8;
+  padding-top: 15px;
+}
+
+.bottom-location .city {
+  font-weight: bold;
+  color: black;
+}
+
+
+.chat-container {
+  width: 100%;
+  max-width: 100%;
+  height: 90vh;
+  margin-top: auto;
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+
+
+.chat-messages {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.message {
+  max-width: 80%;
+  padding: 20px 16px;
+  border-radius: 16px;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+/**
+.bot {
+  margin-left: 20%;
+  background-color: #e6e6e6;
+  align-self: flex-start;
+  border-top-left-radius: 0;
+}
+
+.user {
+  margin-right: 25%;
+  background-color: #d1e7dd;
+  align-self: flex-end;
+  border-top-right-radius: 0;
+}
+**/
+
+.document-input {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; 
+  width: 100%;
+  padding: 0 150px 15px 150px;
+  box-sizing: border-box;
+  gap: 10px;
+}
+
+.input-document {
+  display: flex;
+  align-items: center;
+}
+
+.input-document button {
+  padding: 15px 26px;
+  background-color: #93c3c8;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+
+.chat-input {
+  flex: 1;
+}
+
+.input-wrapper {
+  width: 100%;
+  position: relative;
+  padding: 0; 
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 20px 60px 20px 26px;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  outline: none;
+  font-size: 18px;
+  box-sizing: border-box;
+}
+
+.input-wrapper button {
+  position: absolute;
+  right: 10px; 
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 12px 20px;
+  background-color: #93c3c8;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+#optionsMenu {
+  position: absolute;
+  bottom: 90px; /* Aproximadamente acima da caixa de mensagem */
+  left: 160px; /* Alinhado ao botão de anexo */
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 9999;
+}
+
+#optionsMenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#optionsMenu li {
+  margin: 6px 0;
+}
+
+#optionsMenu button {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #93c3c8;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+#optionsMenu button:hover {
+  background-color: #7fb3b9;
+}
